@@ -1,3 +1,6 @@
+using InformationExchange.Services;
+using InformationExchange.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace InformationExchange
 {
@@ -12,6 +15,12 @@ namespace InformationExchange
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<InformationExchangeDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnection")));
+
+            builder.Services.AddScoped<IPatientService, PatientService>();
+            builder.Services.AddScoped<IDocumentService, DocumentService>();
 
             var app = builder.Build();
 

@@ -2,7 +2,7 @@
 {
     public interface IDocumentService
     {
-        Task<bool> UploadDocuments(int patientId, List<IFormFile> documents);
-        Task<bool> RequestDocument(int patientId, string request);
+        Task UploadDocuments(int patientId, List<IFormFile> documents, int? requestId);
+        Task RequestDocument(int patientId, string request);
     }
 }

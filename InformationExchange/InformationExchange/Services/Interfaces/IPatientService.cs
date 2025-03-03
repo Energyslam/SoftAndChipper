@@ -4,6 +4,6 @@ namespace InformationExchange.Services.Interfaces
 {
     public interface IPatientService
     {
-        Patient? GetPatient(int patientId);
+        Task<Patient?> GetPatient(int patientId);
     }
 }
