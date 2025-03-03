@@ -1,0 +1,6 @@
+@InformationExchange_HostAddress = http://localhost:5093
+
+GET {{InformationExchange_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
